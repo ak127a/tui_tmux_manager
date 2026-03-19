@@ -1,20 +1,65 @@
 {
-  "name": "tmux-manager",
-  "module": "src/index.tsx",
+  "name": "tui_tmux_manager",
+  "version": "0.1.0",
+  "description": "A TUI application to manage tmux sessions and windows",
   "type": "module",
-  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "default": "./dist/cli.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "dev": "bun run --watch src/index.tsx"
+    "build": "tsc",
+    "dev": "bun run --watch src/cli.tsx",
+    "prepublishOnly": "bun run build"
+  },
+  "bin": {
+    "tmux-manager": "./bin/tmux-manager.js"
+  },
+  "keywords": [
+    "tmux",
+    "tui",
+    "terminal",
+    "cli",
+    "opentui",
+    "session",
+    "manager"
+  ],
+  "author": "Akshat Khandelwal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ak127a/tui_tmux_manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ak127a/tui_tmux_manager/issues"
+  },
+  "homepage": "https://github.com/ak127a/tui_tmux_manager#readme",
+  "peerDependencies": {
+    "@opentui/core": ">=0.1.0",
+    "@opentui/react": ">=0.1.0"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
     "@opentui/core": "^0.1.88",
     "@opentui/react": "^0.1.88",
-    "react": "^19.2.4"
+    "@types/bun": "latest",
+    "react": "^19.2.4",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "bun": ">=1.2.0"
   }
 }
