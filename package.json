@@ -1,6 +1,6 @@
 {
   "name": "tui_tmux_manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A TUI application to manage tmux sessions and windows",
   "type": "module",
   "main": "./dist/index.js",
