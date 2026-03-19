@@ -1,4 +1,5 @@
 {
+  "exclude": ["node_modules", "dist", "bin"],
   "compilerOptions": {
     // Environment setup & latest features
     "lib": ["ESNext"],
@@ -12,6 +13,7 @@
     // Bundler mode
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
+    "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
 
